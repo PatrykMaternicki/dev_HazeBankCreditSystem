@@ -32,7 +32,7 @@ public class SummaryServlet extends HttpServlet {
     private ServiceMenager serviceMenager = new ServiceMenager();
     private List<Instalment> resultList = new ArrayList<Instalment>();
     public void doPost (HttpServletRequest request , HttpServletResponse response ) throws IOException, ServletException{
-     
+
         data.clear();
         resultList.clear();
         data.add(request.getParameter("summaryCredit"));
@@ -58,10 +58,18 @@ public class SummaryServlet extends HttpServlet {
        }
          }
     public void responseHTML (HttpServletResponse response) throws IOException{
-        response.setContentType("text/html");
-       response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
        response.getWriter().print (
-               "<table>"
+              "<meta name='viewport' content='width=device-width, initial-scale=1.0'>"
+              +"<link rel='stylesheet' type='text/css' href='CSS/style.min.css'>"
+              +"<header>"
+              +"<p class='logo'><img src='Image/coin.png' class='logo_coin_size' alt='logo coin'></img>HazeBank Credit</p>"
+              +"</header>"
+              +"<main class='app_table_contener' >"
+              +"<div class='app_table_button_contener'>"
+              +"<p class='app_table_button_row'><a href='index.jsp' class='app_button'><img class='logo_coin_size' src='Image/button_back.png'></img></a></p><p class='app_table_button_row'>Powrót</p>"
+              +"</div>"
+              + "<table class='app_table'>"
               + "<tbody>"
               + "<tr>"
               +"<th> Numer Raty </th>"
@@ -69,20 +77,21 @@ public class SummaryServlet extends HttpServlet {
               +"<th> Czeœæ odsetkowa</th>"
               +"<th> Op³ata sta³a </th>"
               +"<th> Wysokoœæ raty</th>"
-              +"</tr>" 
+              +"</tr>"
+              +"</main>"
        );
        for (Instalment element : resultList){
-          
+
            response.getWriter().print(
               "<tr>"
-              +"<td>"+element.getId()+"</td>"
-              +"<td>"+element.getPartCapital()+"</td>"
-              +"<td>"+element.getPartInterest()+"</td>"
-              +"<td>"+element.getPartConstantFee()+"</td>"
-              +"<td>"+element.getFinalInterest()+"</td>"
+              +"<td class='app_result_cell'>"+element.getId()+"</td>"
+              +"<td class='app_result_cell'>"+element.getPartCapital()+"</td>"
+              +"<td class='app_result_cell'>"+element.getPartInterest()+"</td>"
+              +"<td class='app_result_cell'>"+element.getPartConstantFee()+"</td>"
+              +"<td class='app_result_cell'>"+element.getFinalInterest()+"</td>"
               +"</tr>"
            );
-         
+
        }
          response.getWriter().print(
                     "</tbody>"
@@ -95,8 +104,8 @@ public class SummaryServlet extends HttpServlet {
 		String contextPath = getServletContext().getRealPath("raport.pdf");
                 serviceMenager.setLinkToFilePDF(contextPath);
                 serviceMenager.runPdfBuilder();
-               
-                
+
+
 		File pdfFile = new File(contextPath);
 		response.setContentType("application/pdf");
                 response.setCharacterEncoding("UTF-8");
@@ -111,5 +120,4 @@ public class SummaryServlet extends HttpServlet {
 		}
 
 	}
-}   
-
+}

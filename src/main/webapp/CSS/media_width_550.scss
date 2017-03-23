@@ -1,0 +1,14 @@
+@import "mixin.scss";
+
+img.logo_coin_size{
+@include size (26px,26px);
+}
+header{
+@include padding (0,0,0,0);
+}
+p.logo{
+@include size (100%,auto);
+}
+main.app{
+  width:100%;
+}
