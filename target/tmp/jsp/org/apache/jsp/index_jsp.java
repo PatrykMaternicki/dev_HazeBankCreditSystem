@@ -43,34 +43,34 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("<!DOCTYPE HTML>\r\n");
       out.write("\r\n");
-      out.write("<html>\r\n");
+      out.write("<html lang=\"pl\">\r\n");
       out.write("    <head>\r\n");
       out.write("        \r\n");
       out.write("        <meta name='viewport' content='width=device-width, initial-scale=1.0'>\r\n");
-      out.write("        <title>HazeBankCredit</title>\r\n");
       out.write("        <link href=\"CSS/style.min.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <title>HazeBankCredit</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("      <header>\r\n");
       out.write("        <p class=\"logo\"><img src=\"Image/coin.png\" class=\"logo_coin_size\" alt=\"logo coin\"></img>HazeBank Credit</p>\r\n");
       out.write("      </header>\r\n");
       out.write("    <main class=\"app\">\r\n");
-      out.write("        <p class=\"app_text\"> Choose your Credit </p>\r\n");
+      out.write("        <p class=\"app_text\"> Ustaw wartosci dla kredytu </p>\r\n");
       out.write("        <section>\r\n");
       out.write("            <form action=\"summary\" method=\"post\">\r\n");
       out.write("                <table>\r\n");
       out.write("                  <tbody>\r\n");
       out.write("                    <tr>\r\n");
-      out.write("                <td><label>Kwota kredytu:</td><td><input type=\"text\" name=\"summaryCredit\" /></td></label>\r\n");
+      out.write("                <td><label>Kwota kredytu:</td><td><input class=\"test-element\" type=\"text\" name=\"summaryCredit\" required/></td></label>\r\n");
       out.write("                    </tr>\r\n");
       out.write("                    <tr>\r\n");
-      out.write("                <td><label>Ilosc rat :</td><td><input type=\"text\" name=\"stock\" /></label></td>\r\n");
+      out.write("                <td><label>Ilosc rat :</td><td><input class=\"test-element\" type=\"text\" name=\"stock\" required/></label></td>\r\n");
       out.write("                  </tr>\r\n");
       out.write("                  <tr>\r\n");
-      out.write("                <td><label>Oprocentoanie:</td><td><input type=\"text\" name=\"percentCredit\" /></td></label>\r\n");
+      out.write("                <td><label>Oprocentoanie:</td><td><input class=\"test-element\" type=\"text\" name=\"percentCredit\" required/></td></label>\r\n");
       out.write("                </tr>\r\n");
       out.write("                <tr>\r\n");
-      out.write("                <td><label>Opłata stała:</td><td><input type=\"text\" name=\"constantFee\" /></td></label>\r\n");
+      out.write("                <td><label>Opłata stała:</td><td><input class=\"test-element\" type=\"text\" name=\"constantFee\" required/></td></label>\r\n");
       out.write("              </tr>\r\n");
       out.write("            </tbody>\r\n");
       out.write("          </table>\r\n");
@@ -85,7 +85,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                  <p class=\"app_buttons_line\"><button class=\"app_button\" type=\"submit\" name=\"getPdf\" value=\"Get Pdf\" /><img class=\"app_button_image_pdf\" src=\"Image/button_pdf.jpg\"></img></button></p><p class=\"app_buttons_line\" >Pobierz PDF</p>\r\n");
       out.write("                </div>\r\n");
       out.write("                  <div class=\"app_buttons_row\">\r\n");
-      out.write("                  <p class=\"app_buttons_line\"><button class=\"app_button\" type=\"submit\" name=\"getPdf\" value=\"Send\" /><img class=\"app_button_image_html\" src=\"Image/button_html.png\"></img></button></p><p class=\"app_buttons_line app_buttons_line_padding\">Wyświetl Tabele</p>\r\n");
+      out.write("                  <p class=\"app_buttons_line\"><button class=\"app_button\" type=\"submit\" name=\"getPdf\" value=\"Send\" /><img class=\"app_button_image_html\" src=\"Image/button_html.png\"></img></button></p><p class=\"app_buttons_line app_buttons_line_padding\">Wyswietl Tabele</p>\r\n");
       out.write("                </div>\r\n");
       out.write("              </section>\r\n");
       out.write("            </form>\r\n");
@@ -94,6 +94,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <footer>\r\n");
       out.write("\r\n");
       out.write("    </footer>\r\n");
+      out.write("    <script src=\"Client/client.min.js\"></script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

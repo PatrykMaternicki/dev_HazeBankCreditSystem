@@ -6,9 +6,6 @@ img.logo_coin_size{
 header{
 @include padding (0,0,0,0);
 }
-p.logo{
+p.logo,main.app_table_contener{
 @include size (100%,auto);
-}
-main.app{
-  width:100%;
 }
