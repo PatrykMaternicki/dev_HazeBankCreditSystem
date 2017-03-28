@@ -1,4 +1,4 @@
-#### dev_HazeBankCreditSystem
+# dev_HazeBankCreditSystem
 Api to calculate Instalment of Credit and generate PDF raport
 
 ### Require
@@ -10,7 +10,7 @@ Use this command in repository folder.
 ``` 
 mvn jetty:run 
 ```
-#### BackEnd:
+# BackEnd:
 
 ### Package:
 
@@ -29,7 +29,7 @@ mvn jetty:run
 ### View:
  - responseHTML -> Build Table.
  - responsePDF -> Build PDF.
-#### FrontEnd:
+# FrontEnd:
 
 ### Modules:
 - ExceptionService : build Exception.
