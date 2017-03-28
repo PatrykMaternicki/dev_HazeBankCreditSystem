@@ -1,7 +1,7 @@
 {
 "exception":[
-  "W polu musi być podana liczba.",
-  "Liczba nie może być ujemna",
-  "Bledny zapis liczby"
+  "Pola nie mogą być puste",
+  "Bledny zapis liczby",
+  "Liczba nie może być ujemna"
 ]
 }

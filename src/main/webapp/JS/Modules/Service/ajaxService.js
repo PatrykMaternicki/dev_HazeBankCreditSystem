@@ -1,4 +1,4 @@
-export class ajaxService{
+export class AjaxService{
   constructor (path){
     this.path = path;
   }

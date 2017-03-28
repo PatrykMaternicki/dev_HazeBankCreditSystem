@@ -1,43 +1,59 @@
 export class ValidatorService {
-constructor (selectElement){
-  this.elementList = document.querySelectorAll(selectElement);
+constructor (){
+  this.elementList;
   this.exception;
+}
+isException(){
+  if (this.exception != null) return true; return false;
+}
+exceptionFlush (){
+  this.exception = null;
+}
+getExceptNumber (){
+  return this.exception;
+}
+setElement (element){
+  this.elementList  = document.querySelectorAll(element);
 }
 init (){
   this.elementList.forEach((element)=>{
-    this.validateElement(element);
+  this.validateElement(element);
   });
-  if (this.corectElement == true){
-    return true;
-  }
-  return false;
 }
 
 validateElement(element){
-  if(!this.isNumeric(element) || !this.isInteger(element) || !this.lessAsZero(element)){
-    return true;
-  }
+try{
+  if(this.isEmpty(element)) throw 0;
+}
+catch (e){
+  this.exception=e;
   return false;
 }
-isNumeric(element){
-  if (Number.isNaN(element)){
-    this.exception = 0;
-    return false;
-  }
-  return true;
+try{
+  if (!this.isInteger(element)) throw 1;
+}
+catch(e) {
+  this.exception= e;
+  return false;
+}
+try{
+  if (this.lessAsZero(element)) throw 2;
+}
+catch(e){
+  this.exception = e;
+  return false;
+}
+
+
+}
+isEmpty (element){
+  if(element.value.replace(/\s/g, '') == null || element.value.replace(/\s/g, '') == "") return true; return false;
 }
 isInteger(element){
-  if (!Number.isInteger(element)){
-    this.exception = 1;
-    return false;
-  }
-  return true;
+  return Number.isInteger(Number.parseInt(element.value));
 }
 lessAsZero (element){
-  if (Number.parseInt(element)> 0){
-    this.exception = 2;
-    return false;
-  }
-  return true;
+  if (Number.parseInt(element.value) < 0) return true; return false
+
 }
 }

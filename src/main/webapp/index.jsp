@@ -12,9 +12,9 @@
         <p class="logo"><img src="Image/coin.png" class="logo_coin_size" alt="logo coin"></img>HazeBank Credit</p>
       </header>
     <main class="app">
-        <p class="app_text"> Ustaw wartosci dla kredytu </p>
+        <p class="app_text" id="app_text"> Ustaw wartosci dla kredytu </p>
         <section>
-            <form action="summary" method="post">
+            <form id="form" action="summary" method="post">
                 <table>
                   <tbody>
                     <tr>

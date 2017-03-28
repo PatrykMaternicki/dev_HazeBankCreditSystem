@@ -55,9 +55,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <p class=\"logo\"><img src=\"Image/coin.png\" class=\"logo_coin_size\" alt=\"logo coin\"></img>HazeBank Credit</p>\r\n");
       out.write("      </header>\r\n");
       out.write("    <main class=\"app\">\r\n");
-      out.write("        <p class=\"app_text\"> Ustaw wartosci dla kredytu </p>\r\n");
+      out.write("        <p class=\"app_text\" id=\"app_text\"> Ustaw wartosci dla kredytu </p>\r\n");
       out.write("        <section>\r\n");
-      out.write("            <form action=\"summary\" method=\"post\">\r\n");
+      out.write("            <form id=\"form\" action=\"summary\" method=\"post\">\r\n");
       out.write("                <table>\r\n");
       out.write("                  <tbody>\r\n");
       out.write("                    <tr>\r\n");
@@ -82,7 +82,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </label>\r\n");
       out.write("                  <section class=\"app_buttons\">\r\n");
       out.write("                  <div>\r\n");
-      out.write("                  <p class=\"app_buttons_line\"><button class=\"app_button\" type=\"submit\" name=\"getPdf\" value=\"Get Pdf\" /><img class=\"app_button_image_pdf\" src=\"Image/button_pdf.jpg\"></img></button></p><p class=\"app_buttons_line\" >Pobierz PDF</p>\r\n");
+      out.write("                  <p class=\"app_buttons_line\"><button  class=\"app_button\" type=\"submit\" name=\"getPdf\" value=\"Get Pdf\" /><img class=\"app_button_image_pdf\" src=\"Image/button_pdf.jpg\"></img></button></p><p class=\"app_buttons_line\" >Pobierz PDF</p>\r\n");
       out.write("                </div>\r\n");
       out.write("                  <div class=\"app_buttons_row\">\r\n");
       out.write("                  <p class=\"app_buttons_line\"><button class=\"app_button\" type=\"submit\" name=\"getPdf\" value=\"Send\" /><img class=\"app_button_image_html\" src=\"Image/button_html.png\"></img></button></p><p class=\"app_buttons_line app_buttons_line_padding\">Wyswietl Tabele</p>\r\n");

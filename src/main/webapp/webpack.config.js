@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './JS/app.js',
+  entry: './JS/main.js',
   output: {
     filename: 'client/client.min.js'
   },

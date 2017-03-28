@@ -39,6 +39,11 @@ p.app_text {
   @include padding (0, 20px, 0, 0);
   text-align: center;
 }
+p.app_text_exception{
+  @include addFont('Baloo Bhaina', 0.5em, white);
+  @include padding (0, 20px, 0, 0);
+  text-align: center;
+}
 select.app_select {
   @include margin (20px,0);
 text-align: center;
