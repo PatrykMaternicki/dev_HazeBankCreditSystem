@@ -6,8 +6,8 @@
 package com.Services;
 
 
-import com.domainModels.Credit;
-import com.domainModels.Instalment;
+import com.domain.Credit;
+import com.domain.Instalment;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

@@ -5,8 +5,8 @@
  */
 package com.Services;
 
-import com.domainModels.Instalment;
-import com.domainModels.Row;
+import com.domain.Instalment;
+import com.domain.Row;
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;

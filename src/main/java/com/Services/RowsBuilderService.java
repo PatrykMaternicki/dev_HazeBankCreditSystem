@@ -5,8 +5,8 @@
  */
 package com.Services;
 
-import com.domainModels.Instalment;
-import com.domainModels.Row;
+import com.domain.Instalment;
+import com.domain.Row;
 import java.util.ArrayList;
 import java.util.List;
 

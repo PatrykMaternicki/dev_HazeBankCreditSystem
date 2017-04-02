@@ -6,9 +6,9 @@
 package com.Servlets;
 
 import com.Services.ServiceMenager;
-import com.domainModels.Credit;
-import com.domainModels.Data;
-import com.domainModels.Instalment;
+import com.domain.Credit;
+import com.domain.Data;
+import com.domain.Instalment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;

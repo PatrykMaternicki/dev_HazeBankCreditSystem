@@ -5,7 +5,7 @@
  */
 package com.Services;
 
-import com.domainModels.Data;
+import com.domain.Data;
 import java.util.ArrayList;
 import java.util.List;
 

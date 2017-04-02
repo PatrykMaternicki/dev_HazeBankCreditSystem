@@ -5,7 +5,7 @@
  */
 package com.Services;
 
-import com.domainModels.Credit;
+import com.domain.Credit;
 import java.util.ArrayList;
 import java.util.List;
 
