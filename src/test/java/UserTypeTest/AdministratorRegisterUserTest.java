@@ -4,44 +4,44 @@ package UserTypeTest;
 import com.domain.AccessSystemApplication.Rules.AccessRules.AccessRulesAdministrator;
 import com.domain.AccessSystemApplication.Rules.iAccessRules;
 import com.domain.AccessSystemApplication.User.RegisterUser;
-import com.domain.AccessSystemApplication.User.iUser;
+import com.domain.AccessSystemApplication.User.iRegisterUser;
 import static junit.framework.Assert.assertEquals;
 
 public class AdministratorRegisterUserTest implements iUserTest {
-    private iUser user = new RegisterUser();
+    private iRegisterUser user = new RegisterUser();
     private iAccessRules rules = new AccessRulesAdministrator();
     @Override
     public void User_Get_Access_LoginPage() {
-        user.setTypeUser(rules);
-        boolean result = user.getTypeUser().isAccessLoginPage();
+        user.setAccessRules(rules);
+        boolean result = user.getAccessRules().isAccessLoginPage();
         assertEquals(true, result);
     }
 
     @Override
     public void User_Get_Access_RegisterPage() {
-        user.setTypeUser(rules);
-        boolean result = user.getTypeUser().isAccessRegisterPage();
+        user.setAccessRules(rules);
+        boolean result = user.getAccessRules().isAccessRegisterPage();
         assertEquals(true, result);
     }
 
     @Override
     public void User_Get_Access_SubPage() {
-        user.setTypeUser(rules);
-        boolean result = user.getTypeUser().isAccessSubPage();
+        user.setAccessRules(rules);
+        boolean result = user.getAccessRules().isAccessSubPage();
         assertEquals(true, result);
     }
 
     @Override
     public void User_Get_Access_PremiumPage() {
-        user.setTypeUser(rules);
-        boolean result = user.getTypeUser().isAccessPremiumPage();
+        user.setAccessRules(rules);
+        boolean result = user.getAccessRules().isAccessPremiumPage();
         assertEquals(true, result);
     }
 
     @Override
     public void User_Get_Access_ChangePrivileges() {
-        user.setTypeUser(rules);
-        boolean result = user.getTypeUser().isAccessChangePrivilegesPage();
+        user.setAccessRules(rules);
+        boolean result = user.getAccessRules().isAccessChangePrivilegesPage();
         assertEquals(true, result);
     }
     
