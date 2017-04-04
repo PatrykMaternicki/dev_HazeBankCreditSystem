@@ -24,4 +24,5 @@ public interface iRegisterUser {
     public void setId(int id);
     public String getTypeUser();
     public void setTypeUser(String typeUser);
+    public boolean isIsLogged();
 }

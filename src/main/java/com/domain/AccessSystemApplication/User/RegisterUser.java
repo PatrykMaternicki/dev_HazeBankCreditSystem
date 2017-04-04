@@ -70,6 +70,17 @@ public class RegisterUser extends User implements iRegisterUser {
         typeUser = typeUser;
     }
 
+    @Override
+    public void setIsLogged(boolean isLogged) {
+        super.setIsLogged(isLogged); 
+    }
+
+    @Override
+    public boolean isIsLogged() {
+        return super.isIsLogged(); 
+    }
+    
+
 
 
   

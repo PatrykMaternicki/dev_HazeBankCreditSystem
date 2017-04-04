@@ -67,6 +67,10 @@ public class SessionControler {
     public void setRequest(HttpServletRequest httpRequest) {
         request = httpRequest;
     }
+
+    public boolean isSessionKeyExist(String key) {
+      if(request.getSession().getAttribute(key) == null)return false; return true;
+    }
     
     
     

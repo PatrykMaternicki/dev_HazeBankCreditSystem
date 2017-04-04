@@ -15,9 +15,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;import javax.servlet.Filter;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 @WebFilter ("/login")
-public class LoginAccessFilter implements Filter {
-private LoginAccessControler controler = new LoginAccessControler();
+public class AccessLoginFilter implements Filter {
+private LoginAccessControler accessControler = new LoginAccessControler();
 private AuthorizedControler authorizedControler = new AuthorizedControler();
 private SessionControler sessionControler = new SessionControler();
     @Override
@@ -28,14 +29,12 @@ private SessionControler sessionControler = new SessionControler();
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        if (isAuthorize(httpRequest)){
-            sessionControler.setUser(authorizedControler.getUser());
-            sessionControler.setRequest(httpRequest);
-        }
-        
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+        accessControler.setRequest(httpRequest);
+        accessControler.setResponse(httpResponse);
+        accessControler.doAccess();
     }
 
-    @Override
     public void destroy() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -43,5 +42,6 @@ private SessionControler sessionControler = new SessionControler();
     private boolean isAuthorize(HttpServletRequest httpRequest) {
        return authorizedControler.check(httpRequest);
     }
+    
     
 }
