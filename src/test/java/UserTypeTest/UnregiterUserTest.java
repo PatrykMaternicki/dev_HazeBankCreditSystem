@@ -1,10 +1,10 @@
 
 package UserTypeTest;
 
-import com.domain.Rules.AccessRules.AccessRulesAnomyousUser;
-import com.domain.Rules.iAccessRules;
-import com.domain.User.UnregisterUser;
-import com.domain.User.iUser;
+import com.domain.AccessSystemApplication.Rules.AccessRules.AccessRulesAnomyousUser;
+import com.domain.AccessSystemApplication.Rules.iAccessRules;
+import com.domain.AccessSystemApplication.User.UnregisterUser;
+import com.domain.AccessSystemApplication.User.iUser;
 import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 

@@ -5,8 +5,8 @@
  */
 package UserTypeTest.AccessRulesTest;
 
-import com.domain.Rules.AccessRules.AccessRulesPremiumUser;
-import com.domain.Rules.iAccessRules;
+import com.domain.AccessSystemApplication.Rules.AccessRules.AccessRulesPremiumUser;
+import com.domain.AccessSystemApplication.Rules.iAccessRules;
 import static junit.framework.Assert.assertEquals;
 
 /**

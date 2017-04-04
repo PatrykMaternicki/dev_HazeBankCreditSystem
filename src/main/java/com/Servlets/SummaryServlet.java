@@ -5,10 +5,10 @@
  */
 package com.Servlets;
 
-import com.Services.ServiceMenager;
-import com.domain.Credit;
-import com.domain.Data;
-import com.domain.Instalment;
+import com.Models.CreditCalculator;
+import com.domain.CreditCalculatorApplication.Credit;
+import com.domain.CreditCalculatorApplication.Data;
+import com.domain.CreditCalculatorApplication.Instalment;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet ("/summary")
 public class SummaryServlet extends HttpServlet {
     private List<String> data = new ArrayList<String>();
-    private ServiceMenager serviceMenager = new ServiceMenager();
+    private CreditCalculator creditCalculator = new CreditCalculator();
     private List<Instalment> resultList = new ArrayList<Instalment>();
     public void doPost (HttpServletRequest request , HttpServletResponse response ) throws IOException, ServletException{
 
@@ -44,13 +44,13 @@ public class SummaryServlet extends HttpServlet {
         buildView(response,request);
     }
     public void buildView (HttpServletResponse response, HttpServletRequest request) throws IOException, ServletException{
-        serviceMenager.setData(data);
-        if (!serviceMenager.init()){
+        creditCalculator.setData(data);
+        if (!creditCalculator.init()){
            response.sendRedirect("errorMessage");
            return;
         }
-       resultList = serviceMenager.getResultList();
-       if (!serviceMenager.getCredit().isHadPdf().equals("Get Pdf")){
+       resultList = creditCalculator.getResultList();
+       if (!creditCalculator.getCredit().isHadPdf().equals("Get Pdf")){
            responseHTML(response);
            }
        else {
@@ -102,8 +102,8 @@ public class SummaryServlet extends HttpServlet {
 
 		String pdfFileName = "raport.pdf";
 		String contextPath = getServletContext().getRealPath("raport.pdf");
-                serviceMenager.setLinkToFilePDF(contextPath);
-                serviceMenager.runPdfBuilder();
+                creditCalculator.setLinkToFilePDF(contextPath);
+                creditCalculator.runPdfBuilder();
 
 
 		File pdfFile = new File(contextPath);

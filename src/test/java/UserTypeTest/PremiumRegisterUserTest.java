@@ -5,10 +5,10 @@
  */
 package UserTypeTest;
 
-import com.domain.Rules.AccessRules.AccessRulesPremiumUser;
-import com.domain.Rules.iAccessRules;
-import com.domain.User.RegisterUser;
-import com.domain.User.iUser;
+import com.domain.AccessSystemApplication.Rules.AccessRules.AccessRulesPremiumUser;
+import com.domain.AccessSystemApplication.Rules.iAccessRules;
+import com.domain.AccessSystemApplication.User.RegisterUser;
+import com.domain.AccessSystemApplication.User.iUser;
 import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 
