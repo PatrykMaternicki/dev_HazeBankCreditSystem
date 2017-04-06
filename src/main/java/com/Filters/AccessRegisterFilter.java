@@ -13,16 +13,17 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("register.jsp")
+@WebFilter({"/register"})
 public class AccessRegisterFilter implements Filter {
-private RegisterAccessControler accessControler = new RegisterAccessControler();
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        RegisterAccessControler accessControler = new RegisterAccessControler();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         accessControler.setRequest(httpRequest);
@@ -32,7 +33,7 @@ private RegisterAccessControler accessControler = new RegisterAccessControler();
 
     @Override
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

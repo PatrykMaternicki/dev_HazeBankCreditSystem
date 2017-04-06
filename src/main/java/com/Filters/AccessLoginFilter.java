@@ -18,30 +18,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @WebFilter ("/login")
 public class AccessLoginFilter implements Filter {
-private LoginAccessControler accessControler = new LoginAccessControler();
-private AuthorizedControler authorizedControler = new AuthorizedControler();
-private SessionControler sessionControler = new SessionControler();
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+         LoginAccessControler accessControler = new LoginAccessControler();
+        AuthorizedControler authorizedControler = new AuthorizedControler();
+        SessionControler sessionControler = new SessionControler();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         accessControler.setRequest(httpRequest);
         accessControler.setResponse(httpResponse);
         accessControler.doAccess();
+        
     }
 
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
-    private boolean isAuthorize(HttpServletRequest httpRequest) {
-       return authorizedControler.check(httpRequest);
-    }
+   
     
     
 }

@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter ("priviliges.jsp")
+@WebFilter ("/changePrivileges")
 public class AccessChangePrivilegesFilter implements Filter {
 private PrivilegesAccessControler accessControler = new PrivilegesAccessControler();
     @Override

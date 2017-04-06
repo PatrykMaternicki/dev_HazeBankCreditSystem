@@ -13,16 +13,17 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter("premium.jsp")
+@WebFilter("/premium")
 public class AccessPremiumFilter implements Filter {
-private PremiumAccessControler accessControler = new PremiumAccessControler();
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        PremiumAccessControler accessControler = new PremiumAccessControler();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         accessControler.setRequest(httpRequest);
@@ -32,7 +33,7 @@ private PremiumAccessControler accessControler = new PremiumAccessControler();
 
     @Override
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

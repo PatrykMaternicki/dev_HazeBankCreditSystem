@@ -5,6 +5,8 @@
  */
 package com.Filters;
 
+import com.Controlers.AuthorizedControler.AuthorizedControler;
+import com.Controlers.SessionControler;
 import com.Controlers.accessControler.ProfileAccessControler;
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -17,26 +19,44 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebFilter ("profile.jsp")
+@WebFilter ("/profile")
 public class AccessProfileFilter implements Filter {
-private ProfileAccessControler accessControler = new ProfileAccessControler();
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        ProfileAccessControler accessControler = new ProfileAccessControler();
+        SessionControler sessionControler = new SessionControler();
+        AuthorizedControler authorizeControler = new AuthorizedControler();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
+        sessionControler.setRequest(httpRequest);
         HttpServletResponse httpResponse = (HttpServletResponse) response;
+        if (sessionControler.isSessionKeyExist("user")){
+             accessControler.setRequest(httpRequest);
+             accessControler.setResponse(httpResponse);
+             accessControler.doAccess();
+        }
+        else{
+            if (authorizeControler.isAuthorize(httpRequest)){
+             accessControler.setRequest(httpRequest);
+             accessControler.setResponse(httpResponse);
+             accessControler.doAccess();
+        }
         accessControler.setRequest(httpRequest);
         accessControler.setResponse(httpResponse);
         accessControler.doAccess();
+        }
+      
     }
 
     @Override
     public void destroy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
+   
     
 }

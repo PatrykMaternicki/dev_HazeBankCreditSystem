@@ -63,9 +63,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_LoginPage" time="0.001"/>
-  <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_ChnagePrivilegesPage" time="0"/>
+  <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_ChnagePrivilegesPage" time="0.001"/>
   <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_PremiumPage" time="0"/>
   <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_RegisterPage" time="0"/>
   <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_SubPage" time="0"/>
+  <testcase classname="UserTypeTest.AccessRulesTest.AnomyousAccessRulesTest" name="Access_Rules_isCorect_LoginPage" time="0"/>
 </testsuite>

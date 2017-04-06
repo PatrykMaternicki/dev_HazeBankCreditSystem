@@ -1,54 +1,30 @@
 
 package com.Controlers.AuthorizedControler;
 
+import com.Controlers.RestControler.RestControler;
+import com.Models.AuthorizeSystem;
 import com.domain.AccessSystemApplication.User.iRegisterUser;
 import com.domain.AuthorizeSystemApplication.FakeUserRepository;
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 public class AuthorizedControler {
+ private AuthorizeSystem authorizeSystem = new AuthorizeSystem();
+ private RestControler restControler = new RestControler();
  
-   private FakeUserRepository userRepository = new FakeUserRepository();
-private boolean iFoundUser = false;
-private int indexUser;
-private iRegisterUser user;
-    public boolean check(ServletRequest request) {
-       if (checkUserLogin(request)){
-           if (checkPassword(request)){
-           setUser();
-           return true;
-            }
-       }
-       return false;
-    }
+ public boolean isAuthorize(HttpServletRequest request){
+     if (isSuccessfull(request)){
+      moveToRestControler(request);
+      return true;
+ }
+     return false;
+ }
+ private boolean isSuccessfull(HttpServletRequest request){
+    return authorizeSystem.check(request);
+ }
 
-    private boolean checkUserLogin(ServletRequest request) {
-      String postPassword = request.getParameter("login");
-      userRepository.createUserList();
-      for (iRegisterUser user : userRepository.getUserList()){
-          if (user.getName().equals(postPassword)){
-              indexUser = user.getId();
-              return true;
-          }
-      }
-      return false;
+    private void moveToRestControler(HttpServletRequest request) {
+      restControler.setRequest(request);
+      restControler.changeStateObject(authorizeSystem.getFoundUser());
     }
-
-    private boolean checkPassword(ServletRequest request) {
-     String postPassword = request.getParameter("password");
-     iRegisterUser user = userRepository.getRow(indexUser);
-        if (user.getPassword().equals(postPassword)){
-            return true;
-        }
-       return false;
-    }
-
-    private void setUser() {
-        user = userRepository.getRow(indexUser);
-    }
-
-    public iRegisterUser getUser() {
-        return user;
-    }
-    
- 
 }

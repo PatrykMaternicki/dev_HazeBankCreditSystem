@@ -63,9 +63,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+  <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_LoginPage" time="0"/>
+  <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_RegisterPage" time="0"/>
+  <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_SubPage" time="0"/>
   <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_PremiumPage" time="0"/>
   <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_ChangePrivileges" time="0"/>
-  <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_SubPage" time="0"/>
-  <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_RegisterPage" time="0"/>
-  <testcase classname="UserTypeTest.PremiumRegisterUserTest" name="User_Get_Access_LoginPage" time="0"/>
 </testsuite>
