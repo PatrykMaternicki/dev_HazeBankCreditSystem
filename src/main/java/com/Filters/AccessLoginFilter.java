@@ -26,7 +26,7 @@ public class AccessLoginFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-         LoginAccessControler accessControler = new LoginAccessControler();
+        LoginAccessControler accessControler = new LoginAccessControler();
         AuthorizedControler authorizedControler = new AuthorizedControler();
         SessionControler sessionControler = new SessionControler();
         HttpServletRequest httpRequest = (HttpServletRequest) request;
@@ -34,7 +34,7 @@ public class AccessLoginFilter implements Filter {
         accessControler.setRequest(httpRequest);
         accessControler.setResponse(httpResponse);
         accessControler.doAccess();
-        
+        chain.doFilter(request, response);
     }
 
     public void destroy() {

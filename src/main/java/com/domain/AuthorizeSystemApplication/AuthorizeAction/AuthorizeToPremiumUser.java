@@ -18,6 +18,7 @@ public class AuthorizeToPremiumUser implements iAuthorizeAction {
     @Override
     public void doAction(iAccessRules rules, HttpServletRequest request,iRegisterUser user) {
        user.setAccessRules(rules);
+       user.setIsLogged(true);
        request.getSession().setAttribute("user", user);
     }
 

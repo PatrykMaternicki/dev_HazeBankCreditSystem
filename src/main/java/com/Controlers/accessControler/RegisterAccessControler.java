@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RegisterAccessControler extends AccessControler implements iAccessControler {
 
+    private HttpServletResponse response;
     @Override
     public void doAccess() {
         decideWhatIdo();
@@ -18,28 +19,29 @@ public class RegisterAccessControler extends AccessControler implements iAccessC
 
     @Override
     public void decideWhatIdo() {
-        iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("registerUser");
+        iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("user");
         if (!super.isRegisterUser()){
             iAction action = new AccessAction();
-            super.setAction(action);
+            action.doAction(response);
         }
-         else if (user.getAccessRules().isAccessRegisterPage()  && user.isIsLogged()){
+         else if (!user.getAccessRules().isAccessRegisterPage()  && user.isIsLogged()){
              iAction action = new SendRedirectProfileAction(); 
-             super.setAction(action);
+             action.doAction(response);
         }
         else if (user.getAccessRules().isAccessRegisterPage() && !user.isIsLogged()){
            iAction action = new AccessAction();
-           super.setAction(action);
+           action.doAction(response);
         }
         else if (!user.getAccessRules().isAccessRegisterPage() && !user.isIsLogged()){
            iAction action = new AccessAction ();
-           super.setAction(action);
+           action.doAction(response);
         }
-        super.doAction();
+       
     }
 
     @Override
     public void setResponse(HttpServletResponse response) {
+        this.response = response;
         super.setResponse(response); 
     }
 

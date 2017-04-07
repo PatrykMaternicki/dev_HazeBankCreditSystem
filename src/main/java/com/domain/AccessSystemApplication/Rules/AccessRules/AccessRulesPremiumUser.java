@@ -17,12 +17,12 @@ public class AccessRulesPremiumUser implements  iAccessRules {
 
     @Override
     public boolean isAccessLoginPage() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isAccessRegisterPage() {
-        return true;
+        return false;
     }
 
     @Override

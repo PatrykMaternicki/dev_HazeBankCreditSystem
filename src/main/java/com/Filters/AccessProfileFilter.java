@@ -8,6 +8,7 @@ package com.Filters;
 import com.Controlers.AuthorizedControler.AuthorizedControler;
 import com.Controlers.SessionControler;
 import com.Controlers.accessControler.ProfileAccessControler;
+import com.domain.AccessSystemApplication.User.iRegisterUser;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -39,18 +40,26 @@ public class AccessProfileFilter implements Filter {
              accessControler.setRequest(httpRequest);
              accessControler.setResponse(httpResponse);
              accessControler.doAccess();
+             response.getWriter().print("Stay here?");
+             chain.doFilter(request, response);
         }
         else{
             if (authorizeControler.isAuthorize(httpRequest)){
              accessControler.setRequest(httpRequest);
              accessControler.setResponse(httpResponse);
              accessControler.doAccess();
+             chain.doFilter(request, response);
+             
+             
+             
         }
         accessControler.setRequest(httpRequest);
         accessControler.setResponse(httpResponse);
         accessControler.doAccess();
+        
+        
         }
-      
+     
     }
 
     @Override

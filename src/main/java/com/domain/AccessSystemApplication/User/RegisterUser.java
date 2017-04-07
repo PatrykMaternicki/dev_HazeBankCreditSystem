@@ -21,17 +21,17 @@ public class RegisterUser extends User implements iRegisterUser {
 
     @Override
     public void setUserName(String name) {
-        userName = name;
+        this.userName = name;
     }
 
     @Override
     public void setPassword(String password) {
-        password = password;
+       this.password = password;
     }
 
     @Override
     public void setEmail(String email) {
-        email = email;
+        this.email = email;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class RegisterUser extends User implements iRegisterUser {
 
     @Override
     public void setTypeUser(String typeUser) {
-        typeUser = typeUser;
+        this.typeUser = typeUser;
     }
 
     @Override
@@ -78,6 +78,11 @@ public class RegisterUser extends User implements iRegisterUser {
     @Override
     public boolean isIsLogged() {
         return super.isIsLogged(); 
+    }
+
+    @Override
+    public String toString() {
+        return "RegisterUser{" + "typeUser=" + typeUser + ", userName=" + userName + ", password=" + password + ", email=" + email + ", id=" + id + '}';
     }
     
 

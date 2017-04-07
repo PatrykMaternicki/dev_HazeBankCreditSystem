@@ -6,6 +6,7 @@ import com.domain.AccessSystemApplication.User.iRegisterUser;
 import com.domain.AuthorizeSystemApplication.FakeUserRepository;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class AuthorizeSystem {
 
@@ -24,11 +25,10 @@ private iRegisterUser foundUser = new RegisterUser();
        }
        return false;
     }
-    private boolean checkUserLogin(HttpServletRequest request) {
-      String postPassword = request.getParameter("login");
-      userRepository.createUserList();
+    public boolean checkUserLogin(HttpServletRequest request) {
+      String postLogin = request.getParameter("login");
       for (iRegisterUser user : userRepository.getUserList()){
-          if (user.getName().equals(postPassword)){
+          if (user.getName().equals(postLogin)){
               indexUser = user.getId();
               return true;
           }

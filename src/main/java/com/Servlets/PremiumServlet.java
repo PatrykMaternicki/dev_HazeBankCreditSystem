@@ -13,7 +13,11 @@ public class PremiumServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
+       resp.getWriter().print("Nope");
+    }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       resp.getWriter().print("Why?");
     }
     
 }

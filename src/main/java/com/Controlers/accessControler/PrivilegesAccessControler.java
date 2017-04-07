@@ -26,7 +26,7 @@ public class PrivilegesAccessControler extends AccessControler implements iAcces
 
     @Override
     public void decideWhatIdo() {
-       iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("registerUser");
+       iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("user");
         if (!super.isRegisterUser()){
             iAction action = new SendRedirectMainAction();
             super.setAction(action);

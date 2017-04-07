@@ -1,10 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.WEB_002dINF;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,7 +41,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
       out.write("<!DOCTYPE HTML>\n");
       out.write("\n");
       out.write("<html lang=\"pl\">\n");
@@ -49,23 +48,24 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        \n");
       out.write("        <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
       out.write("        <link href=\"CSS/style.min.css\" rel=\"stylesheet\" />\n");
-      out.write("        <title>HazeBankCredit</title>\n");
+      out.write("        <title>Zaloguj sie</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <header>\n");
       out.write("            \n");
       out.write("        </header>\n");
       out.write("        <main>\n");
-      out.write("            <section class=\"sidebar\">\n");
-      out.write("                <nav class=\"sidebar-navigation\">\n");
-      out.write("                    <ol>\n");
-      out.write("                        <li class=\"navigation-row\">\n");
-      out.write("                        <a href=\"login\">Zaloguj się</a>\n");
-      out.write("                        <a href=\"register\">Zarejestruj sie</a>\n");
-      out.write("                        </li>\n");
-      out.write("                    </ol>   \n");
-      out.write("                </nav>\n");
-      out.write("            </section> \n");
+      out.write("            <section class=\"login-containter\">\n");
+      out.write("                <form action=\"profile\" method=\"post\">\n");
+      out.write("                    <label>Login</label>\n");
+      out.write("                    <input type=\"text\" name=\"login\" required/>\n");
+      out.write("                    <label>Password</label>\n");
+      out.write("                    <input type=\"text\" name=\"password\" required>\n");
+      out.write("                    <button type=\"submit\">\n");
+      out.write("                        Submit.\n");
+      out.write("                    </button>\n");
+      out.write("                </form>\n");
+      out.write("            </section>\n");
       out.write("        </main>\n");
       out.write("        <footer>\n");
       out.write("            \n");

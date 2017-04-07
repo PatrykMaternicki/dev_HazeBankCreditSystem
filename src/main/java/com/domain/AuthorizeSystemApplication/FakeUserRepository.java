@@ -47,7 +47,8 @@ public void createUserList (){
     }
 
     public iRegisterUser getRow(int indexUser) {
-        return userList.get(indexUser);
+        iRegisterUser user = userList.get(indexUser);
+        return user;
     }
 
 }

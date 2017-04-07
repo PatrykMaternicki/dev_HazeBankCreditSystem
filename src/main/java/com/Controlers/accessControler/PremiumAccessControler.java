@@ -19,8 +19,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class PremiumAccessControler extends AccessControler implements iAccessControler {
 
+    HttpServletResponse response = this.response;
     @Override
     public void setResponse(HttpServletResponse response) {
+        this.response = response;
         super.setResponse(response);
     }
 
@@ -35,28 +37,28 @@ public class PremiumAccessControler extends AccessControler implements iAccessCo
 
     @Override
     public void decideWhatIdo() {
-       iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("registerUser");
+       iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("user");
         if (!super.isRegisterUser()){
             iAction action = new SendRedirectMainAction();
-            super.setAction(action);
+            action.doAction(response);
         }
          else if (user.getAccessRules().isAccessPremiumPage()  && user.isIsLogged()){
              iAction action = new AccessAction(); 
-             super.setAction(action);
+             action.doAction(response);
         }
-        else if (user.getAccessRules().isAccessPremiumPage() && !user.isIsLogged()){
+       else if (user.getAccessRules().isAccessPremiumPage() && !user.isIsLogged()){
            iAction action = new SendRedirectMainAction();
-           super.setAction(action);
+           action.doAction(response);
         }
-        else if (!user.getAccessRules().isAccessLoginPage() && !user.isIsLogged()){
+        else if (!user.getAccessRules().isAccessPremiumPage() && !user.isIsLogged()){
            iAction action = new SendRedirectMainAction ();
-           super.setAction(action);
+           action.doAction(response);
         }
-        else if (!user.getAccessRules().isAccessLoginPage() && user.isIsLogged()){
+        else if (!user.getAccessRules().isAccessPremiumPage() && user.isIsLogged()){
            iAction action = new SendRedirectProfileAction ();
-           super.setAction(action);
+           action.doAction(response);
         }
-        super.doAction();
+       
  
     }
     

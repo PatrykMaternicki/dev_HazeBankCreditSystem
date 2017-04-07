@@ -12,7 +12,7 @@ public class SendRedirectProfileAction implements iAction {
     @Override
     public void doAction(HttpServletResponse response) {
         try {
-            response.sendRedirect("profile.jsp");
+            response.sendRedirect("profile");
         } catch (IOException ex) {
             Logger.getLogger(SendRedirectProfileAction.class.getName()).log(Level.SEVERE, null, ex);
         }

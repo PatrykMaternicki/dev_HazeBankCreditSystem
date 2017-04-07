@@ -17,7 +17,7 @@ public class AccessRulesAdministrator implements  iAccessRules {
 
     @Override
     public boolean isAccessLoginPage() {
-        return true;
+        return false;
     }
 
     @Override

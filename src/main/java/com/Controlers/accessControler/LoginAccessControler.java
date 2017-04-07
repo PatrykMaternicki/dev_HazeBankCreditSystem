@@ -10,34 +10,37 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LoginAccessControler extends AccessControler implements iAccessControler {
+    private HttpServletResponse response;
     public void doAccess() {
         decideWhatIdo();
     }
  
    public void decideWhatIdo(){
-         iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("registerUser");
+         iRegisterUser user = (iRegisterUser) super.getSession().getAttribute("user");
         if (!super.isRegisterUser()){
             iAction action = new AccessAction();
             super.setAction(action);
         }
-         else if (user.getAccessRules().isAccessLoginPage()  && user.isIsLogged()){
+         else if (!user.getAccessRules().isAccessLoginPage()  && user.isIsLogged()){
              iAction action = new SendRedirectProfileAction(); 
-             super.setAction(action);
+             action.doAction(response);
         }
+         
         else if (user.getAccessRules().isAccessLoginPage() && !user.isIsLogged()){
            iAction action = new AccessAction();
-           super.setAction(action);
+           action.doAction(response);
         }
         else if (!user.getAccessRules().isAccessLoginPage() && !user.isIsLogged()){
            iAction action = new AccessAction ();
-           super.setAction(action);
+           action.doAction(response);
         }
-        super.doAction();
+       
     }
     
 
     @Override
     public void setResponse(HttpServletResponse response) {
+        this.response = response;
         super.setResponse(response);
     }
 

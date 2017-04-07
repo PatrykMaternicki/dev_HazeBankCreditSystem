@@ -2,6 +2,7 @@
 package com.Filters;
 
 import com.Controlers.accessControler.PremiumAccessControler;
+import com.domain.AccessSystemApplication.User.iRegisterUser;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -29,6 +30,8 @@ public class AccessPremiumFilter implements Filter {
         accessControler.setRequest(httpRequest);
         accessControler.setResponse(httpResponse);
         accessControler.doAccess();
+        chain.doFilter(request, response);
+        
     }
 
     @Override

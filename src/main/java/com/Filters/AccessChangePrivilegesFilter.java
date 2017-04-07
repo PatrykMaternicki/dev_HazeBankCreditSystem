@@ -27,7 +27,8 @@ private PrivilegesAccessControler accessControler = new PrivilegesAccessControle
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         accessControler.setRequest(httpRequest);
         accessControler.setResponse(httpResponse);
-        accessControler.doAccess();  
+        accessControler.doAccess();
+        chain.doFilter(request, response);
     }
 
     @Override
