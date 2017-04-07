@@ -9,9 +9,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
-        <title>JSP Page</title>
+        <title>Register</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <header>
+        </header>
+        <main>
+            <section>
+                <form method="post" action="register">
+                    <label>Login </label>
+                    <input type="text" name="username"/>
+                    <label> Haslo</label>
+                    <input type="text" name="password"/>
+                    <label>Potwierdz haslo</label>
+                    <input type="text" name="confirmPassword"/>
+                    <label>Email<label>
+                    <input type="email" name="email"/>
+                    <button type="submit">
+                        Zarejestruj sie
+                    </button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            
+        </footer>
     </body>
 </html>

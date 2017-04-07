@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AuthorizeSystem {
 
-private FakeUserRepository userRepository = new FakeUserRepository();
+private FakeUserRepository userRepository;
 private boolean iFoundUser = false;
 private int indexUser;
 private iRegisterUser foundUser = new RegisterUser();
     
      public boolean check(HttpServletRequest request) {
-      userRepository.createUserList();
+      addRepository();
        if (checkUserLogin (request) ){
             if (checkPassword(request)){
                 addFoundUser();
@@ -55,6 +55,11 @@ private iRegisterUser foundUser = new RegisterUser();
 
     public void setFoundUser(iRegisterUser foundUser) {
         this.foundUser = foundUser;
+    }
+
+    private void addRepository() {
+        UserRepository repository = new UserRepository();
+        userRepository = repository.getUserRepository();
     }
     
     

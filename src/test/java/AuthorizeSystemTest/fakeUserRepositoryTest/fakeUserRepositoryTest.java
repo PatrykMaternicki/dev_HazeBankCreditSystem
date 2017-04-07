@@ -10,6 +10,7 @@ import org.junit.Test;
 
 public class fakeUserRepositoryTest {
    private FakeUserRepository giveRepository = new FakeUserRepository();
+  
    
    @Test
    public void Repository_should_return_object_user(){

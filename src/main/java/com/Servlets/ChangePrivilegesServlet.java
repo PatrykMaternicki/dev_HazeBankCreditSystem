@@ -5,6 +5,7 @@
  */
 package com.Servlets;
 
+import com.Models.RestService;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +19,12 @@ public class ChangePrivilegesServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        moveToView(req,resp);
+       RestService service = new RestService();
+       int index = Integer.parseInt(req.getParameter("userid"));
+       String Action = req.getParameter("change");
+       service.setAction(Action);
+       service.setFindInedex(index);
+       moveToView(req,resp);
     }
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         moveToView(req,resp);
