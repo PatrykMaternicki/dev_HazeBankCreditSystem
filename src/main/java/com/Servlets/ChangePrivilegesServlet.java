@@ -6,6 +6,7 @@
 package com.Servlets;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,10 +18,14 @@ public class ChangePrivilegesServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print("ELO2");
+        moveToView(req,resp);
     }
         protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().print("ELO2");
+        moveToView(req,resp);
     }
+     private void moveToView(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+     RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/privileges.jsp");
+    view.forward(req, resp);
+    }    
     
 }
