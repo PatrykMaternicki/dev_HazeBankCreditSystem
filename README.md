@@ -10,6 +10,10 @@ Use this command in repository folder.
 ``` 
 mvn jetty:run 
 ```
+### Dev requires:
+ - node.js 
+ - webpack
+ - node-sass (any to compile sass file)
 # BackEnd:
 
 ### Package:
@@ -34,6 +38,13 @@ mvn jetty:run
 - Servlet : execute Request and Response.
 ##### View:
  - View : show value.
+##### Domain:
+ - AccessRules : accessRules to view,model etc.
+ - ActionRules: Strategy access.
+ - ActionAuthorize : Strategy authorize.
+ - FormUser : Request inject to Object.
+ - Credit: Credit objects.
+ - User: Register user.
 # FrontEnd:
 
 ### Modules:
@@ -41,3 +52,10 @@ mvn jetty:run
 - AjaxService: AJAX service;
 - RenderService: Inject to view.
 - ValidatorService: valid input value.
+
+### Release list:
+ #### 1.1.0
+Add Credit System
+### 1.2.0
+Add AccessSystem
+Add AuthorizeSystem
